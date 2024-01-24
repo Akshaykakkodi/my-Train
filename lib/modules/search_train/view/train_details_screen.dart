@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mytrain/constants/app_constants.dart';
@@ -14,7 +12,6 @@ class TrainDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TrainController trainController =Get.find();
     trainController.getTrainSchedule(trainNumber);
-    // log(trainNumber);
 
     return Obx(
       () => 
@@ -37,12 +34,12 @@ class TrainDetailsScreen extends StatelessWidget {
                 const SizedBox(
                   width: 30,
                 ),
-                Text("Run Days",style: TextStyle(color: Colors.white),),
-                SizedBox(width: 10,),
+              const  Text("Run Days",style: TextStyle(color: Colors.white),),
+              const  SizedBox(width: 10,),
 
                 Container(
                   color: Colors.white,
-                  padding:EdgeInsets.all(5),
+                  padding:const EdgeInsets.all(5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -111,7 +108,7 @@ class TrainDetailsScreen extends StatelessWidget {
                       color:trainController.trainScheduleModel.value.data.route[index].stop? const Color(0xffF1DBD8):Colors.blueGrey,
                       child: Row(
                         children: [
-                          Column(
+                       const   Column(
                             children: [
                               Text("00:00"),
                               
@@ -135,7 +132,7 @@ class TrainDetailsScreen extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: 210,
-                                child: Expanded(child: Text(trainController.trainScheduleModel.value.data.route[index].station_name.toString(),style: TextStyle(
+                                child: Expanded(child: Text(trainController.trainScheduleModel.value.data.route[index].station_name.toString(),style:const TextStyle(
                                   fontSize: 13
                                 ),))),
                              const SizedBox(
@@ -165,7 +162,7 @@ class TrainDetailsScreen extends StatelessWidget {
                             ],
                           ),
                         const  Spacer(),
-                          Column(
+                        const  Column(
                             children: [
                               Text("00:00"),
                               
@@ -211,7 +208,7 @@ class TrainDetailsScreen extends StatelessWidget {
                           color:trainController.trainScheduleModel.value.data.route[index].stop? const Color(0xffF1DBD8):Colors.blueGrey,
                           child: Row(
                             children: [
-                              Column(
+                             const Column(
                                 children: [
                                   Text("00:00"),
                                  
@@ -236,7 +233,7 @@ class TrainDetailsScreen extends StatelessWidget {
                                   SizedBox(
                                     width: 160,
                                     child: Expanded(
-                                      child: Text(trainController.trainScheduleModel.value.data.route[index].station_name.toString(),style: TextStyle(
+                                      child: Text(trainController.trainScheduleModel.value.data.route[index].station_name.toString(),style:const TextStyle(
                                       fontSize: 13
                                                                     ),),
                                     ),
@@ -252,7 +249,7 @@ class TrainDetailsScreen extends StatelessWidget {
                                       const SizedBox(
                                         width: 5,
                                       ),
-                                      Text("platform"),
+                                     const Text("platform"),
                                       const SizedBox(
                                         width: 5,
                                       ),
@@ -268,7 +265,7 @@ class TrainDetailsScreen extends StatelessWidget {
                                 ],
                               ),
                             const  Spacer(),
-                              Column(
+                             const Column(
                                 children: [
                                   Text("00:00"),
                                   

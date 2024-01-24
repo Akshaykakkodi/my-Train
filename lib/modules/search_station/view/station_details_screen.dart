@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -17,19 +16,19 @@ class StationDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppConstants.primaryColor,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme:const IconThemeData(color: Colors.white),
 
       ),
 
       body:Obx(
         () => 
-         Container(
+         SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: ListView.separated(
              
             separatorBuilder: (context, index) {
-              return Divider();
+              return const Divider();
             }, 
             itemCount: stationController.stationModel.value.data?.length??0,
             itemBuilder: (context, index) {
@@ -41,7 +40,7 @@ class StationDetailsScreen extends StatelessWidget {
                 leading: Container(
                   padding:const EdgeInsets.all(5),
                   color: AppConstants.primaryColor,
-                  child: Text(stationController.stationModel.value.data![index].code.toString(),style: TextStyle(color: Colors.white,fontSize: 17),),
+                  child: Text(stationController.stationModel.value.data![index].code.toString(),style:const TextStyle(color: Colors.white,fontSize: 17),),
                 ),
             title: Text(stationController.stationModel.value.data![index].name.toString()),
             subtitle: Text(stationController.stationModel.value.data![index].stateName.toString()),

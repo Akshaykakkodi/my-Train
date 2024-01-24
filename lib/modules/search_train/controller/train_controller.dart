@@ -44,7 +44,6 @@ class TrainController extends GetxController {
   toggleNonStop() {
     isNonStopsVisible.value = !isNonStopsVisible.value;
     update();
-    print(isNonStopsVisible);
   }
 
 Rx<TrainLiveStatusModel> trainLiveStatusModel=TrainLiveStatusModel().obs;
@@ -56,7 +55,7 @@ Rx<TrainLiveStatusModel> trainLiveStatusModel=TrainLiveStatusModel().obs;
     
     try {
       isSearchingTrain.value = true;
-      var response = await dio.get(AppConstants.baseUrl + "v1/searchTrain",
+      var response = await dio.get("${AppConstants.baseUrl}v1/searchTrain",
           queryParameters: {"query": trainNumber},
           options: Options(headers: {
             'X-RapidAPI-Key': AppConstants.apiKey,
@@ -88,7 +87,7 @@ var isLoading=false.obs;
     
     try {
       isLoading.value=true;
-      var response = await dio.get(AppConstants.baseUrl +"v1/getTrainSchedule",
+      var response = await dio.get("${AppConstants.baseUrl}v1/getTrainSchedule",
           queryParameters: {"trainNo": trainNumber},
           options: Options(headers: {
             'X-RapidAPI-Key': AppConstants.apiKey,
