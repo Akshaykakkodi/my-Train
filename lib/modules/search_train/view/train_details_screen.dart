@@ -14,7 +14,18 @@ class TrainDetailsScreen extends StatelessWidget {
     trainController.getTrainSchedule(trainNumber);
 
     return Obx(
-      () => 
+      () =>  trainController.isLoading.value? Scaffold(
+          backgroundColor: AppConstants.primaryColor,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child:
+              CircularProgressIndicator()
+            )
+          ],
+        ),
+      ):
        Scaffold(
         appBar: AppBar(
           backgroundColor: AppConstants.primaryColor,
